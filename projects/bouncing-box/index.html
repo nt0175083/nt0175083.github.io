@@ -53,7 +53,7 @@
 
             // changes the text displayed on the Box
             function changeBoxText(newText) {
-                box.text(newText);
+                box.text(points);
             }
 
             //////////////////////////////////////////////////////////////////
@@ -62,7 +62,8 @@
             
             // TODO 2 - Variable declarations 
             var positionx = 0;
-
+            var points = 0;
+            var speed = 10;
 
 
             
@@ -86,7 +87,10 @@
             */
             function handleBoxClick() {
                 positionX = 0;
-                
+                points = points + 1;
+                changeBoxText(points);
+                speed
+
             };
         })();
     </script>
