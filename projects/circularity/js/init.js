@@ -40,7 +40,7 @@ var init = function (window) {
 
         var loopsCompleted = 0; 
         while (loopsCompleted < 100) {
-            drawCircle();
+            drawCircle([loopsCompleted]);
             loopsCompleted++
         }
             
