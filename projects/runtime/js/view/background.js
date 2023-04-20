@@ -51,7 +51,7 @@ var background = function (window) {
             
             for (var i = 0; i < 5; ++i) {
                 var buildingHeight = Math.floor(Math.random() * 275) + 100;
-                var building = draw.rect(75, buildingHeight, "blue", "Black", 1);
+                var building = draw.rect(75, buildingHeight, "red", "blue", 1);
                 building.x = 200 * i;
                 building.y = groundY - buildingHeight;
                 background.addChild(building);
@@ -88,6 +88,8 @@ var background = function (window) {
 
                 if(bldg.x < - 100){
                     bldg.x = canvasWidth
+
+                }
                 // code to do something with each element
               }
 
