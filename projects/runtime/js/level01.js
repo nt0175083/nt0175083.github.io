@@ -46,11 +46,23 @@ var level01 = function (window) {
     
         // DO NOT EDIT CODE BELOW HERE
     }
-    function createMyObstacle(x, y) {
-        createMyObstacle(100, 200);
-      }
+    function createMyEnemy(x, y) {
+        var enemy = game.createGameItem("enemy", 25);
+        var redSquare = draw.rect(50, 50, "red");
+        redSquare.x = x;
+        redSquare.y = y;
+        enemy.addChild(redSquare);
+    }
 };
+    createMyEnemy(150,200); 
+    createMyEnemy(200,225); 
+    createMyEnemy(300,350);
 
+    enemy.x = 400;
+    enemy.y = groundY - 50;
+
+    game.addGameItem(enemy);
+    
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
