@@ -124,9 +124,9 @@ function moveSnake() {
   } else if (snake.head.direction === "right") {
     snake.head.column = snake.head.column + 1;
   } else if (snake.head.direction === "up") {
-    snake.head.column = snake.head.column - 1;
+    snake.head.row = snake.head.row -1;
   } else if (snake.head.direction === "down") {
-    snake.head.column = snake.head.column + 1;
+    snake.head.row= snake.head.row + 1;
   }
   repositionSquare(snake.head);
   /* 
@@ -144,8 +144,10 @@ function hasHitWall() {
   
   HINT: What will the row and column of the snake's head be if this were the case?
   */
-
-  return false;
+  if (snake.head.row < 0 || snake.head.column < 0 || snake.head.column >= COLUMNS) {
+    return true;
+  } else
+    return false;
 }
 
 function hasCollidedWithApple() {
@@ -155,9 +157,13 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
+  if (snake.head.row === apple.row && snake.head.column === apple.column) {
+    return true
+  } else
+    return false;
 
-  return false;
-}
+  }
+
 
 function handleAppleCollision() {
   // increase the score and update the score DOM element
