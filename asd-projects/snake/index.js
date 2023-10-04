@@ -107,13 +107,13 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  for ( /* code to loop through the indexes of the snake.body Array*/ ) {
-    var snakeSquare = snake.body;
+  for (var i = snake.body.length - 1; i > 0; i--){
+    var snakeSquare = snake.body[i];
 
-    var nextSnakeSquare = ;
-    var nextRow = ;
-    var nextColumn = ;
-    var nextDirection = ;
+    var nextSnakeSquare = snake.body[i - 1];
+    var nextRow = nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
+    var nextDirection = nextSnakeSquare.direction;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
@@ -157,7 +157,7 @@ function hasHitWall() {
   
   HINT: What will the row and column of the snake's head be if this were the case?
   */
-  if (snake.head.row < 0 || snake.head.column < 0 || snake.head.column >= COLUMNS) {
+  if (snake.head.row < 0 || snake.head.row >= ROWS || snake.head.column < 0 || snake.head.column >= COLUMNS) {
     return true;
   } else
     return false;
@@ -223,8 +223,16 @@ function hasCollidedWithSnake() {
   head and each part of the snake's body also knows its own row and column.
   
   */
-
+ for (var i = 1; i < snake.body.length; i++){
+  var snakeSquare = snake.body[i];
+if (snake.head.row === snakeSquare.row && snake.head.column === snakeSquare.column) {
+  return true;
+}
+else{
   return false;
+}
+}
+
 }
 
 function endGame() {
