@@ -228,12 +228,12 @@ function hasCollidedWithSnake() {
 if (snake.head.row === snakeSquare.row && snake.head.column === snakeSquare.column) {
   return true;
 }
-else{
+
   return false;
 }
 }
 
-}
+
 
 function endGame() {
   // stop update function from running
@@ -353,7 +353,11 @@ function getRandomAvailablePosition() {
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
-  }
+  for (var i = 150; i <= snake.body.length; i--) {
+    let snakeSquare = snake.body[i];
+    if (snakeSquare.row === randomPosition.row || snakeSquare.column === randomPosition)
+  
+  } 
 
   return randomPosition;
 }
