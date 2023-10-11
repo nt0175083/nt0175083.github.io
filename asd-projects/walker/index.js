@@ -12,12 +12,28 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
+  var KEY = {
+    ENTER: "LEFT",
+  };
 
+  var KEY = {
+    ENTER: "UP",
+  };
+
+  var KEY = {
+    ENTER: "RIGHT",
+  };
+
+  var KEY = {
+    ENTER: "DOWN",
+  };
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
-
+  $(document).on('eventType', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  function handleKeyDown(event) {
+    console.log(keydown);
+  }
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -35,9 +51,27 @@ function runProgram(){
   Called in response to events.
   */
   function handleEvent(event) {
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed");
+    }
 
+    else if (event.which === KEY.ENTER) {
+      console.log("left pressed");
   }
 
+    else if (event.which === KEY.ENTER) {
+      console.log("up pressed");
+  }
+
+    else if (event.which === KEY.ENTER) {
+      console.log("right pressed");
+
+  }
+    
+   else if (event.which === KEY.ENTER) {
+      console.log("down pressed");
+  }
+}
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
